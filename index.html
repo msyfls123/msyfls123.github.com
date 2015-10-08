@@ -46,7 +46,7 @@
 			font-size: 1em;
 			font-weight: 300;
 			font-style: normal;
-			font-family: sans-serif !important;
+			font-family: "Microsoft Yahei",arial,sans-serif;
 		}
 		body #header h1 a:hover{color:#EFEFEF;}
 		
@@ -109,7 +109,7 @@
 			color: #9a9a9a;
 			text-align: center;
 			padding: 20px 15px;
-			font-family: sans-serif !important;
+			font-family: "Microsoft Yahei",arial,sans-serif;
 			font-weight: 300;
 			background: #152637;
 		}
@@ -199,6 +199,14 @@
 		$("body #contact li:eq(0)").mouseout(function(){$("#qrcode").stop(true,true).slideUp().removeClass("q")});
 		$("body #contact li:eq(1)").mouseover(function(){$("#qrcode").addClass("w").stop(true,true).slideDown()});
 		$("body #contact li:eq(1)").mouseout(function(){$("#qrcode").stop(true,true).slideUp().removeClass("w")});
+
+		function resize(){
+			var NeedHeight=window.innerHeight-$("#contact").offset().top;
+			var contactTop=(NeedHeight-60>0)?(NeedHeight-30):30;
+			$("#contact").css({"margin-top":contactTop+"px"})
+		}
+		window.onresize = function() {resize()};
+		window.onload = function() {resize()};
 	</script>
 
 </body>
