@@ -46,7 +46,7 @@
 			font-size: 1em;
 			font-weight: 300;
 			font-style: normal;
-			font-family: "Microsoft Yahei",arial,sans-serif;
+			font-family: "Segoe UI", Arial, freesans, sans-serif;
 		}
 		body #header h1 a:hover{color:#EFEFEF;}
 		
@@ -109,7 +109,7 @@
 			color: #9a9a9a;
 			text-align: center;
 			padding: 20px 15px;
-			font-family: "Microsoft Yahei",arial,sans-serif;
+			font-family: "Segoe UI", Arial, freesans, sans-serif;
 			font-weight: 300;
 			background: #152637;
 		}
@@ -127,6 +127,7 @@
 		body #contact{
 			text-align: right;
 			margin-top: 30px;
+			visibility: hidden;
 		} 
 
 		body #contact li{
@@ -203,7 +204,7 @@
 		function resize(){
 			var NeedHeight=window.innerHeight-$("#contact").offset().top;
 			var contactTop=(NeedHeight-60>0)?(NeedHeight-30):30;
-			$("#contact").css({"margin-top":contactTop+"px"})
+			$("#contact").css({"margin-top":contactTop+"px","visibility":"visible"});
 		}
 		window.onresize = function() {resize()};
 		window.onload = function() {resize()};
