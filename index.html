@@ -14,8 +14,8 @@
 		a:hover{text-decoration: none;}
 		a:visited{text-decoration: none;}
 		body #header {
-			height: 320px;
-			padding-top:80px;
+			height: 300px;
+			padding-top:70px;
 			color: #EFEFEF;
 			position: relative;
 			border-bottom: 1px solid #0a1b2c;
@@ -86,6 +86,21 @@
 			left: -6px;
 		}
 
+		body #menu button{
+			border:none;
+			background: none;
+			color: #aaa;
+			margin-left: 20px;
+			height: 26px;
+			line-height: 18px;
+		}
+
+		body #menu button:hover{
+			background: #aaa;
+			color: #172839;
+			font-weight: 500;
+		}
+
 		body #menu li:nth-child(1) span:before{
 			content: url(img/ico-01.png) "   ";
 
@@ -105,26 +120,54 @@
 		
 		body #board{
 			border: 1px solid #172839;
-			border-radius: 5px;
-			min-height: 200px;
+			border-radius:0 0 5px 5px;
+			height: 200px;
 			color: #9a9a9a;
 			text-align: left;
-			padding: 0 15px 20px 15px;
 			font-family: "Segoe UI", Arial, freesans, sans-serif;
 			font-weight: 300;
 			background: #152637;
+			padding:0;
+			perspective:1000;
+			-webkit-perspective:1000;
 		}
 
 		body #remind{
 			background: #2a3b4c;
 			line-height: 23px;
 			border-radius: 3px 3px 0 0;
-			margin:0 -15px 10px;
 			text-align: center;
+			font-family: "Segoe UI", Arial, freesans, sans-serif;
+			font-weight: 300;
+			color: #9a9a9a;
 		}
 		
 		body #news{
 			padding: 0;
+			height: 100%;
+			width: 100%;
+			background:rgba(16,32,48,0.15);
+			position: absolute;
+			transform: rotateY(0deg);
+			-webkit-transform: rotateY(0deg);
+			z-index: 10;
+			-webkit-transition: all .5s ; -moz-transition: all .5s ; -o-transition: all .5s ; transition: all .5s;
+			overflow: hidden;
+		}
+
+		body #news.left{
+			transform: rotateY(-90deg);
+			-webkit-transform: rotateY(-90deg);
+			width: 0;
+			overflow: hidden;
+		}
+
+		body #int.right{
+			transform: rotateY(90deg);
+			-webkit-transform: rotateY(90deg);
+			width: 0;
+			overflow: hidden;
+			left: 100%;
 		}
 
 		body #news li{
@@ -153,6 +196,16 @@
 			float: right;
 			margin-right: 20px;
 			font-family: system,-apple-system,".SFNSText-Regular","Helvetica Neue","Roboto","Segoe UI",sans-serif;
+		}
+
+		body #int{
+			z-index: 7;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			background: #491;
+			position: absolute;
+			-webkit-transition: all .5s ; -moz-transition: all .5s ; -o-transition: all .5s ; transition: all .5s;
 		}
 
 		body #contact{
@@ -196,13 +249,18 @@
 			<li><a href="http://www.douban.com/people/kimimama/"><span>我的豆瓣</span></a></li>
 			<li><a href="http://msyfls123.github.io/jidian"><span>学院网站</span></a></li>
 			<li><a href="file/Kimi_Portfolio.pdf"><span>我的简历</span></a></li>
+			<li><button id="swift">更多精彩</button></li>
 			</ul>
+			<div id="remind" class="col-md-5 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">Where a Little Amazing Happens</div>
 			<div class="col-md-5 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1" id="board">
-				<p id="remind">Where a Little Amazing Happens</p>
+
 				<ul id="news">
 					<a href="http://msyfls123.github.io/myWiki/index.html?name=Report"><li>顺德暑期实习报告<span>2015.07-10</span></li></a>
 					<a href="http://msyfls123.github.io/jidian"><li>学院网站项目<span>2015.04-06</span></li></a>
 				</ul>
+				<div id="int" class="right">
+					
+				</div>
 			</div>
 		</div>
 
@@ -243,6 +301,18 @@
 		}
 		window.onresize = function() {resize()};
 		window.onload = function() {resize()};
+
+		function change(){
+			if ($("#news").hasClass("left")) {
+				$("#news").removeClass("left");
+				$("#int").addClass("right");
+			}else{
+				$("#news").addClass("left");
+				$("#int").removeClass("right");
+			}
+		}
+
+		$("#swift").on("click",function(){change()})
 	</script>
 
 </body>
