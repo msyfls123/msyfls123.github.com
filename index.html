@@ -74,6 +74,7 @@
 			text-indent: 15px;
 			padding: 5px 10px 5px 15px;
 		    border: 1px solid #789;
+		    border-radius: 0 0 8px 0;
 		}
 
 		body #menu li span{
@@ -88,6 +89,7 @@
 
 		body #menu button{
 			border:none;
+			position: relative;
 			background: none;
 			color: #aaa;
 			margin-left: 20px;
@@ -95,10 +97,22 @@
 			line-height: 18px;
 		}
 
+		body #menu button:before{
+			content: ": )";
+			position: absolute;
+			left: -18px;
+			font-weight: bold;
+		}
+
 		body #menu button:hover{
 			background: #aaa;
 			color: #172839;
 			font-weight: 500;
+		}
+
+		body #menu button:visited,body #menu button:link,body #menu button:active,{
+			border: none;
+			box-shadow: none;
 		}
 
 		body #menu li:nth-child(1) span:before{
@@ -179,7 +193,7 @@
 		body #news li:hover:before{
 			content: ">";
 			position: absolute;
-			left: 0px;
+			left: -15px;
 		}
 
 		body #news a{
@@ -306,9 +320,11 @@
 			if ($("#news").hasClass("left")) {
 				$("#news").removeClass("left");
 				$("#int").addClass("right");
+				$("#menu button").html("更多精彩")
 			}else{
 				$("#news").addClass("left");
 				$("#int").removeClass("right");
+				$("#menu button").html("回到文章")
 			}
 		}
 
