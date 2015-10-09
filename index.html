@@ -110,9 +110,14 @@
 			font-weight: 500;
 		}
 
-		body #menu button:visited,body #menu button:link,body #menu button:active,{
+		body #menu button:hover:before{
+			content: "";
+		}
+
+		body #menu button{
 			border: none;
 			box-shadow: none;
+			outline:none;
 		}
 
 		body #menu li:nth-child(1) span:before{
