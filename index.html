@@ -229,7 +229,7 @@
 			width: 100%;
 			height: 100%;
 			left: 0;
-			background: #491;
+			background: #f3f0fc;
 			position: absolute;
 			-webkit-transition: all .5s ; -moz-transition: all .5s ; -o-transition: all .5s ; transition: all .5s;
 		}
@@ -261,6 +261,8 @@
 	<a href="http://github.com/msyfls123">
       <img style="position: absolute; z-index: 5; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
     </a>
+
+    <!-- body开始 -->
 	<div id="main" class="container">
 
 		<div id="header" class="row">
@@ -275,16 +277,16 @@
 			<li><a href="http://www.douban.com/people/kimimama/"><span>我的豆瓣</span></a></li>
 			<li><a href="http://msyfls123.github.io/jidian"><span>学院网站</span></a></li>
 			<li><a href="file/Kimi_Portfolio.pdf"><span>我的简历</span></a></li>
-			<li><button id="swift">更多精彩</button></li>
+			<li><button id="swift">回到文章</button></li>
 			</ul>
 			<div id="remind" class="col-md-5 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">Where a Little Amazing Happens</div>
 			<div class="col-md-5 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1" id="board">
 
-				<ul id="news">
+				<ul id="news" class="left">
 					<a href="http://msyfls123.github.io/myWiki/index.html?name=Report"><li><span>2015.07-10</span>顺德暑期实习报告</li></a>
 					<a href="http://msyfls123.github.io/jidian"><li><span>2015.04-06</span>学院网站项目</li></a>
 				</ul>
-				<div id="int" class="right">
+				<div id="int">
 					
 				</div>
 			</div>
@@ -299,8 +301,18 @@
 			</ul>
 
 		</div>
-</div>
+	</div>
+
+	<!-- body结束 -->
+
+	<!-- 基础js -->
 	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+		<!-- 数据可视化js -->
+	<script type="text/javascript" src="js/highcharts.js"></script>
+	<script type="text/javascript" src="js/highcharts-more.js"></script>
+	<script type="text/javascript" src="js/data.js"></script>
+	<script type="text/javascript" src="js/exporting.js"></script>
+	<script type="text/javascript" src="js/graphic.js"></script>
 	<script type="text/javascript">
 		$(function() {
 			$('#header a:eq(0)').tooltip({placement:"right"})
@@ -326,7 +338,7 @@
 			$("#contact").css({"margin-top":contactTop+"px","visibility":"visible"});
 		}
 		window.onresize = function() {resize()};
-		window.onload = function() {resize()};
+		window.onload = function() {resize();change()};
 
 		function change(){
 			if ($("#news").hasClass("left")) {
@@ -340,8 +352,7 @@
 			}
 		}
 
-		$("#swift").on("click",function(){change()})
+		$("#swift").on("click",function(){change();})
 	</script>
-
 </body>
 </html>
