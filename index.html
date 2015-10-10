@@ -64,28 +64,28 @@
 		body #menu li{
 			list-style: none;
 			font-family: Microsoft Yahei;
-			font-weight: 300;
 			font-size: 1em;
 			line-height: 2.5em;
 			text-align: center;
+			font-weight: 400;
+
 		}
 		
 		body #menu li a span:hover{
-			color: #efefff;
-			text-indent: 15px;
-			padding: 5px 10px 5px 15px;
-		    border: 1px solid #789;
-		    border-radius: 0 0 8px 0;
-		}
+			background: #aaa;
+			color: #172839;		}
 
 		body #menu li span{
 			color: #aaa;
+			position: relative;
+			margin-left: 20px;
+			padding: 5px 5px 5px 7px;
 		}
 
 		body #menu li span:before{
-			position: relative;
-			top: 2px;
-			left: -6px;
+			position: absolute;
+			top: 0px;
+			left: -25px;
 		}
 
 		body #menu button{
@@ -101,7 +101,7 @@
 		body #menu button:before{
 			content: ": )";
 			position: absolute;
-			left: -18px;
+			left: -23px;
 			font-weight: bold;
 		}
 
@@ -112,7 +112,7 @@
 		}
 
 		body #menu button:hover:before{
-			content: "";
+			color: #aaa;
 		}
 
 		body #menu button{
