@@ -189,6 +189,16 @@
 			width: 0;
 			overflow: hidden;
 			left: 100%;
+			visibility: hidden;
+		}
+
+		body #int.hid{
+			transform: rotateY(90deg);
+			-webkit-transform: rotateY(90deg);
+			width: 100%;
+			overflow: hidden;
+			left: 100%;
+			visibility: hidden;
 		}
 
 		body #news li{
@@ -282,11 +292,11 @@
 			<div id="remind" class="col-md-5 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">Where a Little Amazing Happens</div>
 			<div class="col-md-5 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1" id="board">
 
-				<ul id="news" class="left">
+				<ul id="news">
 					<a href="http://msyfls123.github.io/myWiki/index.html?name=Report"><li><span>2015.07-10</span>顺德暑期实习报告</li></a>
 					<a href="http://msyfls123.github.io/jidian"><li><span>2015.04-06</span>学院网站项目</li></a>
 				</ul>
-				<div id="int">
+				<div id="int" class="hid">
 					
 				</div>
 			</div>
@@ -338,7 +348,7 @@
 			$("#contact").css({"margin-top":contactTop+"px","visibility":"visible"});
 		}
 		window.onresize = function() {resize()};
-		window.onload = function() {resize();change()};
+		window.onload = function() {resize();$("#int").addClass("right").removeClass("hid")};
 
 		function change(){
 			if ($("#news").hasClass("left")) {
