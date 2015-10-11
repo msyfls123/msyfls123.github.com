@@ -91,11 +91,11 @@
 					text: "msyfls123.github.io"
 				}
 			});
-			$('.board').bind('mousedown', function () {
-	        $(this).toggleClass('modall');
-	        $(this).toggleClass('hei');
-	        $("#int").tooltip('toggle');
-	        $('#int', this).highcharts().reflow();
+			$('#int').bind('mousedown', function () {
+	        $(".board").toggleClass('modall');
+	        $(".board").toggleClass('hei');
+	        $(this).tooltip('toggle');
+	        $(this, ".board").highcharts().reflow();
     	});
 		})
 	});
