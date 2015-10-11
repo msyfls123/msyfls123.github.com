@@ -92,8 +92,38 @@
 			left: -25px;
 		}
 
+		@keyframes myfirst
+		{
+		0% {left: -40px;opacity: 0}
+		75% {left: -28px;opacity: 1}
+		100% {left: -28px;opacity: 0}
+		}
+
+		@-moz-keyframes myfirst /* Firefox */
+		{
+		0% {left: -40px;opacity: 0}
+		75% {left: -28px;opacity: 1}
+		100% {left: -28px;opacity: 0}
+		}
+
+		@-webkit-keyframes myfirst /* Safari 和 Chrome */
+		{
+		0% {left: -40px;opacity: 0}
+		75% {left: -28px;opacity: 1}
+		100% {left: -28px;opacity: 0}
+		}
+
+		@-o-keyframes myfirst /* Opera */
+		{
+		0% {left: -40px;opacity: 0}
+		75% {left: -28px;opacity: 1}
+		100% {left: -28px;opacity: 0}
+		}
+		
 		body #menu button{
 			border:none;
+			box-shadow: none;
+			outline:none;
 			position: relative;
 			background: none;
 			color: #aaa;
@@ -105,8 +135,23 @@
 		body #menu button:before{
 			content: ": )";
 			position: absolute;
-			left: -23px;
-			font-weight: bold;
+			left: -25px;
+			top: 0px;
+			font-size: 9px;
+			font-weight: 400;
+			border: 1px solid #aaa;
+			padding: 0px 5px 3px;
+			border-radius: 50%;
+			animation: myfirst 1.5s;
+			-moz-animation: myfirst 1.5s;	/* Firefox */
+			-webkit-animation: myfirst 1.5s;	/* Safari 和 Chrome */
+			-o-animation: myfirst 1.5s;
+			animation-iteration-count:infinite;
+			-webkit-animation-iteration-count:infinite; 
+			/*animation-direction:alternate;
+			-webkit-animation-direction:alternate;*/
+			animation-timing-function:ease-in-out;
+			-webkit-animation-timing-function:ease-in-out;
 		}
 
 		body #menu button:hover{
@@ -117,12 +162,6 @@
 
 		body #menu button:hover:before{
 			color: #aaa;
-		}
-
-		body #menu button{
-			border: none;
-			box-shadow: none;
-			outline:none;
 		}
 
 		body #menu li:nth-child(1) span:before{
@@ -145,16 +184,17 @@
 
 		/*右侧展示栏*/
 		body .board{
-			border: 1px solid #172839;
+			/*border: 1px solid #172839;*/
 			border-radius:0 0 5px 5px;
 			color: #9a9a9a;
 			text-align: left;
 			font-family: "Segoe UI", Arial, freesans, sans-serif;
-			font-weight: 300;
+			font-weight: 400;
 			background: #152637;
 			padding:0;
 			perspective:1000;
 			-webkit-perspective:1000;
+			box-shadow: 0px 0px 1px 1px #0a1b2c;
 		}
 
 		body .board.hei{
@@ -173,26 +213,30 @@
 
 		body #remind{
 			margin-top: 10px; 
-			background: #2a3b4c;
+			background: #a00;
 			line-height: 23px;
 			border-radius: 3px 3px 0 0;
 			text-align: center;
 			font-family: "Segoe UI", Arial, freesans, sans-serif;
-			font-weight: 400;
-			color: #0a1b2c;
+			font-weight: 300;
+			color: #f08287;
+			box-shadow: 0px 0px 1px 1px #570000;
 		}
 		
 		body #news{
 			padding: 0;
 			height: 100%;
 			width: 100%;
-			background:rgba(16,32,48,0.15);
+			background:#123;
+			border-radius:0 0 5px 5px;
 			position: absolute;
 			transform: rotateY(0deg);
 			-webkit-transform: rotateY(0deg);
 			z-index: 10;
 			-webkit-transition: all .5s ; -moz-transition: all .5s ; -o-transition: all .5s ; transition: all .5s;
 			overflow: hidden;
+			font-size: 1.35rem;
+			color: #789;
 		}
 
 		body #news.left{
@@ -208,8 +252,12 @@
 			text-indent: 20px;
 		}
 
+		body #news a:nth-child(odd) li{
+			background-color: #122334;
+		}
+
 		body #news a:first-child li{
-			margin-top: 15px;
+			margin-top: 26px;
 		}
 
 		body #news li:hover:before{
@@ -222,16 +270,17 @@
 			color: #789;
 		}
 
-		body #news li:hover{
-			background-color: #678;
-			color: #172839;
+		body #news li:hover,body #news a:nth-child(odd) li:hover{
+			background-color: #fff;
 			font-weight: 500;
+			color: #172839
 		}
 
 		body #news span{
 			margin-right: 25px;
 			font-family: system,-apple-system,".SFNSText-Regular","Helvetica Neue","Roboto","Segoe UI",sans-serif;
 			color: #456;
+			font-weight: 300;
 		}
 
 
@@ -241,6 +290,7 @@
 			height: 100%;
 			left: 0;
 			background: #f3f0fc;
+			border-radius:0 0 5px 5px;
 			position: absolute;
 			overflow: hidden;
 			-webkit-transition: all .5s ; -moz-transition: all .5s ; -o-transition: all .5s ; transition: all .5s;
@@ -387,7 +437,7 @@
 			}
 		}
 
-		$("#swift").on("click",function(){change();})
+		$("#swift").on("click",function(){if(!$("#int").hasClass("hid")){change()};})
 	</script>
 </body>
 </html>
