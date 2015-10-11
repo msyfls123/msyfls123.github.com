@@ -91,7 +91,7 @@
 					text: "msyfls123.github.io"
 				}
 			});
-			$('#int').bind('mousedown', function () {
+			$('#int').bind('dblclick', function () {
 	        $(".board").toggleClass('modall');
 	        $(".board").toggleClass('hei');
 	        $(this).tooltip('toggle');
