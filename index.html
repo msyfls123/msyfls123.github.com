@@ -13,6 +13,8 @@
 		body{background-color: #192a3b}
 		a:hover{text-decoration: none;}
 		a:visited{text-decoration: none;}
+
+		/*页面头部*/
 		body #header {
 			height: 300px;
 			padding-top:70px;
@@ -51,6 +53,8 @@
 		}
 		body #header h1 a:hover{color:#EFEFEF;}
 		
+
+		/*左侧导航*/
 		body .row:nth-child(2){
 			border-top:1px solid #2a3b4c;
 			padding-top: 25px;
@@ -138,10 +142,11 @@
 			content: url(img/ico-04.png) "   ";
 		}
 		
-		body #board{
+
+		/*右侧展示栏*/
+		body .board{
 			border: 1px solid #172839;
 			border-radius:0 0 5px 5px;
-			height: 200px;
 			color: #9a9a9a;
 			text-align: left;
 			font-family: "Segoe UI", Arial, freesans, sans-serif;
@@ -150,6 +155,20 @@
 			padding:0;
 			perspective:1000;
 			-webkit-perspective:1000;
+		}
+
+		body .board.hei{
+			height: 200px;
+		}
+
+		body .board.modall {
+		    position: fixed;
+		    width: 100%;
+		    height: 100%;
+		    top: 0;
+		    left: 0;
+		    background: rgba(0, 0, 0, 0.7);
+		    z-index: 10000;
 		}
 
 		body #remind{
@@ -181,24 +200,6 @@
 			-webkit-transform: rotateY(-90deg);
 			width: 0;
 			overflow: hidden;
-		}
-
-		body #int.right{
-			transform: rotateY(90deg);
-			-webkit-transform: rotateY(90deg);
-			width: 0;
-			overflow: hidden;
-			left: 100%;
-			visibility: hidden;
-		}
-
-		body #int.hid{
-			transform: rotateY(90deg);
-			-webkit-transform: rotateY(90deg);
-			width: 100%;
-			overflow: hidden;
-			left: 100%;
-			visibility: hidden;
 		}
 
 		body #news li{
@@ -241,8 +242,30 @@
 			left: 0;
 			background: #f3f0fc;
 			position: absolute;
+			overflow: hidden;
 			-webkit-transition: all .5s ; -moz-transition: all .5s ; -o-transition: all .5s ; transition: all .5s;
 		}
+
+		body #int.right{
+			transform: rotateY(90deg);
+			-webkit-transform: rotateY(90deg);
+			width: 0;
+			overflow: hidden;
+			left: 100%;
+			visibility: hidden;
+		}
+
+		body #int.hid{
+			transform: rotateY(0deg);
+			-webkit-transform: rotateY(0deg);
+			width: 100%;
+			overflow: hidden;
+			left: 0;
+			visibility: hidden;
+		}
+
+
+		/*底部社交信息*/
 
 		body #contact{
 			text-align: right;
@@ -287,16 +310,16 @@
 			<li><a href="http://www.douban.com/people/kimimama/"><span>我的豆瓣</span></a></li>
 			<li><a href="http://msyfls123.github.io/jidian"><span>学院网站</span></a></li>
 			<li><a href="file/Kimi_Portfolio.pdf"><span>我的简历</span></a></li>
-			<li><button id="swift">回到文章</button></li>
+			<li><button id="swift">Loading</button></li>
 			</ul>
 			<div id="remind" class="col-md-5 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">Where a Little Amazing Happens</div>
-			<div class="col-md-5 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1" id="board">
+			<div class="col-md-5 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 board hei">
 
 				<ul id="news">
 					<a href="http://msyfls123.github.io/myWiki/index.html?name=Report"><li><span>2015.07-10</span>顺德暑期实习报告</li></a>
 					<a href="http://msyfls123.github.io/jidian"><li><span>2015.04-06</span>学院网站项目</li></a>
 				</ul>
-				<div id="int" class="hid">
+				<div id="int" class="hid" data-toggle="tooltip" title="单击全屏，再单击返回">
 					
 				</div>
 			</div>
@@ -315,19 +338,21 @@
 
 	<!-- body结束 -->
 
-	<!-- 基础js -->
-	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<!-- 数据可视化js -->
 	<script type="text/javascript" src="js/highcharts.js"></script>
 	<script type="text/javascript" src="js/highcharts-more.js"></script>
 	<script type="text/javascript" src="js/data.js"></script>
 	<script type="text/javascript" src="js/exporting.js"></script>
 	<script type="text/javascript" src="js/graphic.js"></script>
+
+	<!-- 基础js -->
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		$(function() {
 			$('#header a:eq(0)').tooltip({placement:"right"})
 			$('#header h1').tooltip({placement:"bottom"})
 			$('body #contact li').tooltip({placement:"top"})
+			$('#int').tooltip({placement:"bottom"})
 		})
 		$("body #contact li img").each(function(i){
 			$(this).mouseenter(function(){
@@ -348,7 +373,7 @@
 			$("#contact").css({"margin-top":contactTop+"px","visibility":"visible"});
 		}
 		window.onresize = function() {resize()};
-		window.onload = function() {resize();$("#int").addClass("right").removeClass("hid")};
+		window.onload = function() {resize();$("#int").addClass("right").removeClass("hid");$("#swift").html("更多精彩")};
 
 		function change(){
 			if ($("#news").hasClass("left")) {

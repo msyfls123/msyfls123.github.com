@@ -1,6 +1,5 @@
 	$(document).ready(function(){ 
 		var shopName=new Array();
-		$("#int").css("width",$(this).parent().width()+"px")
 		$.get("file/data.csv",function(csv){
 			//读取csv的店铺名
 			csvArr=csv.replace(/\n/g,",").split(",");
@@ -9,7 +8,7 @@
         		i=i+3;
         	};
 
-			var chart = new Highcharts.Chart({
+			chart = new Highcharts.Chart({
 				chart: {
 					renderTo: "int",
 		            type: 'scatter',
@@ -92,5 +91,11 @@
 					text: "msyfls123.github.io"
 				}
 			});
+			$('.board').bind('mousedown', function () {
+	        $(this).toggleClass('modall');
+	        $(this).toggleClass('hei');
+	        $("#int").tooltip('toggle');
+	        $('#int', this).highcharts().reflow();
+    	});
 		})
 	});
