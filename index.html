@@ -192,6 +192,10 @@
 		body #menu li:nth-child(4) span:before{
 			content: url(img/ico-04.png) "   ";
 		}
+
+		body #menu li:nth-child(5) span:before{
+			content: url(img/ico-05.png) "   ";
+		}
 		
 
 		/*右侧展示栏*/
@@ -227,15 +231,14 @@
 
 		body #remind{
 			margin-top: 10px; 
-			background: #a00;
+			background: #39c;
 			line-height: 24px;
 			border-radius: 5px 5px 0 0;
 			text-align: center;
 			font-family: "Segoe UI", Arial, freesans, sans-serif;
-			font-weight: 400;
-			color: #ed7d7d;
+			font-weight: 450;
+			color: #012;
 			box-shadow: 0px 0px 1px 1px #570000;
-			text-shadow:0px 1px 1px #123;
 		}
 		
 		body #news{
@@ -353,7 +356,7 @@
 </head>
 <body>
 	<a href="http://github.com/msyfls123">
-      <img style="position: absolute; z-index: 5; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+      <img style="position: absolute; z-index: 5; top: 0; right: 0; border: 0;" src="img/forkme.png" alt="Fork me on GitHub">
     </a>
 
     <!-- body开始 -->
@@ -368,9 +371,10 @@
 
 			<ul class="col-md-2 col-md-offset-2 col-xs-12" id="menu">
 			<li><a href="http://msyfls123.github.io/myWiki"><span id="wiki">我的Wiki</span></a></li>
+			<li><a href="file/Kimi_Portfolio.pdf"><span>我的简历</span></a></li>
 			<li><a href="http://www.douban.com/people/kimimama/"><span>我的豆瓣</span></a></li>
 			<li><a href="http://msyfls123.github.io/jidian"><span>学院网站</span></a></li>
-			<li><a href="file/Kimi_Portfolio.pdf"><span>我的简历</span></a></li>
+			<li><a href="http://www.tudou.com/programs/view/Gghw1gl5gBo/" title="Awesome the Voice"><span>学院视频</span></a></li>
 			<li><button id="swift">Loading</button></li>
 			</ul>
 			<div id="remind" class="col-md-5 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">Where a Little Amazing Happens</div>
@@ -415,6 +419,7 @@
 			$('#header h1').tooltip({placement:"bottom"})
 			$('body #contact li').tooltip({placement:"top"})
 			$('#int').tooltip({placement:"bottom"})
+			$('#menu li:nth-child(5) a').tooltip({placement:"right"})
 		})
 		$("body #contact li img").each(function(i){
 			$(this).mouseenter(function(){
