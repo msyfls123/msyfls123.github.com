@@ -82,24 +82,6 @@
 
 		}
 		
-		body #menu li a span:hover{
-			color: #efefef;
-			text-shadow:none;
-			border-radius: 4px;
-		    background: #012;
-		    background-color: #122334;
-			background-image: -webkit-linear-gradient(#192a3b, #122334);
-			background-image: -o-linear-gradient(#192a3b, #122334);
-			background-image: linear-gradient(#192a3b, #122334);
-		    box-shadow: 0 1px 2px rgba(0,0,0,.55),inset 0 1px 1px rgba(255,255,255,.15);
-		}
-
-		body #menu li a span:active{
-			background-image: -webkit-linear-gradient(#0d1e2f, #192a3b);
-			background-image: -o-linear-gradient(#0d1e2f, #192a3b);
-			background-image: linear-gradient(#0d1e2f, #192a3b);
-			box-shadow: 0 1px 2px rgba(255,255,255,.35),inset 0 1px 1px rgba(0,0,0,.25);
-		}
 
 		body #menu li span{
 			color: #aaa;
@@ -112,34 +94,54 @@
 			position: absolute;
 			top: 0px;
 			left: -25px;
+			-webkit-transition: all .5s ease; -moz-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease;
+		}
+
+		body #menu li a span:hover{
+			color: #ccc;
+			text-shadow:none;
+			border-radius: 4px;
+		    background: #012;
+		    background-color: #122334;
+			background-image: -webkit-linear-gradient(#1c2d3e, #142536);
+			background-image: -o-linear-gradient(#1c2d3e, #142536);
+			background-image: linear-gradient(#1c2d3e, #142536);
+		    box-shadow: 0 1px 2px rgba(0,0,0,.55),inset 0 1px 1px rgba(255,255,255,.15);
+		}
+
+		body #menu li a span:hover:before{
+			transform: rotateY(360deg);
+		}
+
+		body #menu li a span:active{
+			background-image: -webkit-linear-gradient(#142536, #1c2d3e);
+			background-image: -o-linear-gradient(#142536, #1c2d3e);
+			background-image: linear-gradient(#142536, #1c2d3e);
+			box-shadow: 0 1px 2px rgba(255,255,255,.35),inset 0 1px 1px rgba(0,0,0,.25);
 		}
 
 		@keyframes myfirst
 		{
-		0% {left: -40px;opacity: 0}
-		75% {left: -28px;opacity: 1}
-		100% {left: -28px;opacity: 0}
+		0% {transform:rotateY(0);}
+		100% {transform:rotateY(360deg);}
 		}
 
 		@-moz-keyframes myfirst /* Firefox */
 		{
-		0% {left: -40px;opacity: 0}
-		75% {left: -28px;opacity: 1}
-		100% {left: -28px;opacity: 0}
+		0% {transform:rotateY(0);}
+		100% {transform:rotateY(360deg);}
 		}
 
 		@-webkit-keyframes myfirst /* Safari 和 Chrome */
 		{
-		0% {left: -40px;opacity: 0}
-		75% {left: -28px;opacity: 1}
-		100% {left: -28px;opacity: 0}
+		0% {transform:rotateY(0);}
+		100% {transform:rotateY(360deg);}
 		}
 
 		@-o-keyframes myfirst /* Opera */
 		{
-		0% {left: -40px;opacity: 0}
-		75% {left: -28px;opacity: 1}
-		100% {left: -28px;opacity: 0}
+		0% {transform:rotateY(0);}
+		100% {transform:rotateY(360deg);}
 		}
 		
 		body #menu button{
@@ -150,6 +152,7 @@
 			background: none;
 			color: #aaa;
 			margin-left: 20px;
+			padding: 6px;
 			height: 26px;
 			line-height: 18px;
 			text-shadow:0px 1px 1px #012;
@@ -158,7 +161,7 @@
 		body #menu button:before{
 			content: ":）";
 			position: absolute;
-			left: -25px;
+			left: -27px;
 			top: 3px;
 			font-size: 9px;
 			font-weight: 300;
@@ -176,6 +179,7 @@
 			-webkit-animation-direction:alternate;*/
 			animation-timing-function:ease-in-out;
 			-webkit-animation-timing-function:ease-in-out;
+			-webkit-transition: all .5s ease; -moz-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease;
 		}
 
 		body #menu button:hover{
@@ -202,6 +206,7 @@
 		}
 
 		body #menu li:nth-child(1) span:before{
+			left: -24px;
 			content: url(img/ico-01.png) "   ";
 
 		}
