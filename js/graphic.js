@@ -143,15 +143,15 @@
     for(var i=0;i<125;i++){
         var x = Math.random()*canvas.width;
         var y = Math.random()*canvas.height;
-        var xa = Math.random()/2 - .25;
-        var ya = Math.random()/2 - .25;
+        var xa = Math.random()/4 - .125;
+        var ya = Math.random()/4 - .125;
 
         dots.push({
             x: x,
             y: y,
             xa: xa,
             ya: ya,
-            max: 7000
+            max: 6000
         })
     }
 
