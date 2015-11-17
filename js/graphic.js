@@ -104,9 +104,19 @@
 	        $(this, ".board").highcharts().reflow();
     	});
 		})
+
+	    $("#cas").html5_3d_animation({
+	        window_width: '1000',
+	        window_height: '400',
+	        window_background: '#112238',
+	        star_count: '1000',
+	        star_color: '#bcd',
+	        star_depth: '200'
+	    });
 	});
 
 // canvas绘图
+/*
     var canvas = document.getElementById("cas");
     var ctx = canvas.getContext("2d");
 
@@ -225,3 +235,4 @@
 
         RAF(animate);
     }
+*/
