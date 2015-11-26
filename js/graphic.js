@@ -1,3 +1,40 @@
+$(function() {
+	 $("#cas").html5_3d_animation({
+	        window_width: '1000',
+	        window_height: '400',
+	        window_background: '#112238',
+	        star_count: '1000',
+	        star_color: '#bcd',
+	        star_depth: '200'
+	    });
+	$('#header a:eq(0)').tooltip({placement:"right"})
+	$('#header h1').tooltip({placement:"bottom"})
+	$('body #contact li').tooltip({placement:"top"})
+	$('#menu li:nth-child(5) a').tooltip({placement:"right"})
+	$('#dryer').tooltip({placement:"bottom"})
+	$("body #contact li:eq(0)").hover(function(){$("#qrcode").addClass("q").stop(true,true).slideDown()},function(){$("#qrcode").stop(true,true).slideUp().removeClass("q")});
+	$("body #contact li:eq(1)").hover(function(){$("#qrcode").addClass("w").stop(true,true).slideDown()},function(){$("#qrcode").stop(true,true).slideUp().removeClass("w")});
+})
+
+$("body #contact li img").each(function(i){
+	$(this).mouseenter(function(){
+		$(this).css({"top":"-30px"});
+	})
+	$(this).mouseleave(function(){
+		$(this).css({"top":"0px"});
+	})
+});
+
+
+function resize(){
+	var NeedHeight=window.innerHeight-$("#contact").offset().top;
+	var contactTop=(NeedHeight-60>0)?(NeedHeight-30):30;
+	$("#contact").css({"margin-top":contactTop+"px","visibility":"visible"});
+}
+window.onresize = function() {resize()};
+window.onload = function() {resize();$("#swift").html("更多精彩")};
+
+
 // d3可视化中的阳光小箭头
   var light=function(dis1,dis2){svg.append("image")  
     .attr("x",dis1)  
@@ -56,14 +93,7 @@ var lines=[
 ]
 
 	$(document).ready(function(){ 
-	    $("#cas").html5_3d_animation({
-	        window_width: '1000',
-	        window_height: '400',
-	        window_background: '#112238',
-	        star_count: '1000',
-	        star_color: '#bcd',
-	        star_depth: '200'
-	    });
+	   
 
 	    //d3可视化
 
@@ -143,4 +173,119 @@ var lines=[
 		      LineArr.push(Line)
 		    })
 		    $(function(){$('[data-toggle="tooltip"]').tooltip({placement:"top"});})
+
+		// d3可视化结束
+
+
+		var shopName=new Array();
+		var chartWidth=$(".board").width(),chartHeight=$(".board").height();
+		$.get("file/data.csv",function(csv){
+			//读取csv的店铺名
+			csvArr=csv.replace(/\n/g,",").split(",");
+        	for (var i = 3; i <= csvArr.length-2; ) {
+        		shopName[i/3-1]=csvArr[i];
+        		i=i+3;
+        	};
+
+			chart = new Highcharts.Chart({
+				chart: {
+					renderTo: "dryer",
+		            type: 'scatter',
+		            width: chartWidth,
+		            height: chartHeight,
+		            zoomType: 'xy',
+		            backgroundColor:'#012',
+		            spacing:[10,10,10,0]
+		        },
+		        data: {
+		        	name: '干衣机',
+		            csv: csv,
+		            startColumn:1,
+		        },
+		        plotOptions:{
+		        	scatter:{
+		        		cropThreshold:300,
+		        		marker:{
+		        			radius:2,
+		        			fillColor: '#f00',		        			
+		        		},
+		        		dataLabels: {
+				            enabled: true,
+				            formatter: function() {
+				            	var sum=this.x * this.y/1000;
+				                return (sum>50)?(sum.toFixed(1)+'k'):'<50k';
+			            	},
+			            	style:{
+			            		fontSize:"8px",
+			            		fontWeight:"light",
+			            		color: "#abc"
+			            	}
+       					}
+		        	}
+		        },
+		        legend:{
+		        	enabled:false,
+		        	labelFormatter:function(){
+		        		return  ' 单款干衣机（销售总额）';
+		        	},
+		        	floating: true,
+		            align: 'right',
+		            verticalAlign: 'top',
+		            x: 0,
+		            y: 45,
+		            itemStyle:{
+		            	'fontSize':"9px",
+		            	color:'#aaa'
+		            }
+		        },
+		        title: {
+		            text: 'Dryer Sales on Tmall',
+		            style:{
+		            	fontSize:'9px',
+		            	color:'#efefef'
+		            }
+		        },
+				yAxis: {
+					title: {
+						text: 'Sales',
+						margin: 10
+					},
+					ceiling: 4000,
+					gridLineColor:"#345"
+				},
+				xAxis: {
+					title: {
+						text: 'Price',
+						margin: 0
+					},
+					gridLineWidth:1,
+					gridLineColor:"#345"
+				},
+				tooltip: {
+					// headerFormat: shopName[Number(this.point.index)],
+					formatter:function(){
+						return '<b>'+shopName[this.point.index]+'</b><br><span>价格： </span><span style="color:#17a">'+this.point.x+'</span><br><span>销量： </span><span style="color:#17a">'+this.point.y+'</span><br><span>总价： </span><span style="color:#c03;font-weight:bold">'+this.point.y*this.point.x+'</span>'
+					},
+					crosshairs: [{            // 设置准星线样式
+					    width: 1.5,
+					    color: '#f03030',
+					}, {
+					    width: 1.5,
+					    color: "#f03030",
+					}],
+				},
+				credits:{
+					enabled:false
+				}
+			});
+		})
+
+		$('#dryer').bind('dblclick', function () {
+			$(this).tooltip('toggle');
+	        $(".board").toggleClass('modall');
+	        $(".board").toggleClass('hei');
+	        $(this).highcharts().setSize($(".board").width(), $(".board").height())
+    	});
+
 	});
+
