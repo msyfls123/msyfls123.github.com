@@ -1,4 +1,4 @@
-body{background-color: #112238;}
+body{background-color: #000;}
 a:hover{text-decoration: none;}
 a:visited{text-decoration: none;}
 
@@ -8,19 +8,19 @@ body #header {
 	padding-top:70px;
 	color: #EFEFEF;
 	position: relative;
-	border-bottom: 1px solid #071727;
+	border-bottom: 1px solid #000;
 }
 
 body #header img{
-	border: 3px solid #efefef;
+	border: 2px solid #999;
 	border-radius: 50%;
 }
 
 body #header>a:first-child {
 	position: relative;
-	width: 160px;
+	width: 150px;
 	left: 50%;
-	margin-left: -78px;
+	margin-left: -75px;
 	margin-bottom: 30px;
 	display: block;
 	-webkit-transition: all .5s ; -moz-transition: all .5s ; -o-transition: all .5s ; transition: all .5s;
@@ -56,7 +56,7 @@ body #header h1 a:hover{color:#EFEFEF;}
 	background: none;
 	bottom: -5px;
 	outline:medium;
-	color: #39c;
+	color: #999;
 }
 
 #baidu input:last-child{
@@ -67,28 +67,28 @@ body #header h1 a:hover{color:#EFEFEF;}
 	border: none;
 	bottom: -1px;
 	outline:medium;
-	color: #123;
+	color: #070707;
 	border-radius: 15px 15px 0 0;
 	font-weight: 700;
 }
 
 #baidu input:last-child:hover{
-	background: #172839;
-	color: #051627;
-	text-shadow:0px 1px 1px #234;
-	background-image: -webkit-linear-gradient(#172842, #0f2037);
-	background-image: -o-linear-gradient(#172842, #0f2037);
-	background-image: linear-gradient(#172842, #0f2037);
-    box-shadow: 0 1px 2px rgba(0,0,0,.55),inset 0 1px 1px rgba(255,255,255,.15);
+	background: #111;
+	color: #222;
+	text-shadow:0px 0px 2px #000;
+	background-image: -webkit-linear-gradient(#111, #000);
+	background-image: -o-linear-gradient(#111, #000);
+	background-image: linear-gradient(#111, #000);
+    box-shadow: 0 1px 2px rgba(0,0,0,.75),inset 0 1px 1px rgba(255,255,255,.15);
 }
 
 #baidu input:last-child:active{
-	background: #0f2031;
-	color: #051627;
-	text-shadow:0px 1px 1px #234;
-	background-image: -webkit-linear-gradient(#0f2037, #172842);
-	background-image: -o-linear-gradient(#0f2037, #172842);
-	background-image: linear-gradient(#0f2037, #172842);
+	background: #111;
+	color: #000;
+	text-shadow:0px 0px 2px #333;
+	background-image: -webkit-linear-gradient(#000, #111);
+	background-image: -o-linear-gradient(#000, #111);
+	background-image: linear-gradient(#000, #111);
 	box-shadow: 0 1px 2px rgba(255,255,255,.35),inset 0 1px 1px rgba(0,0,0,.25);
 }			
 
@@ -97,7 +97,7 @@ body #header h1 a:hover{color:#EFEFEF;}
 body .row:nth-child(2){
 	position: relative;
 	padding-top: 25px;
-	border-top: 1px solid #223031;
+	border-top: 1px solid #121212;
 }
 
 body #menu{
@@ -117,7 +117,7 @@ body #menu li{
 
 
 body #menu li span{
-	color: #9ab;
+	color: #999;
 	position: relative;
 	margin-left: 20px;
 	padding: 5px 5px 5px 7px;
@@ -136,9 +136,9 @@ body #menu li a span:hover{
 	border-radius: 4px;
     background: #012;
     background-color: #122334;
-	background-image: -webkit-linear-gradient(#172839, #0f2031);
-	background-image: -o-linear-gradient(#172839, #0f2031);
-	background-image: linear-gradient(#172839, #0f2031);
+	background-image: -webkit-linear-gradient(#222, #111);
+	background-image: -o-linear-gradient(#222, #111);
+	background-image: linear-gradient(#222, #111);
     box-shadow: 0 1px 2px rgba(0,0,0,.55),inset 0 1px 1px rgba(255,255,255,.15);
 }
 
@@ -186,9 +186,9 @@ body #menu li a span:hover:before{
 }
 
 body #menu li a span:active{
-	background-image: -webkit-linear-gradient(#0f2031, #172839);
-	background-image: -o-linear-gradient(#0f2031, #172839);
-	background-image: linear-gradient(#0f2031, #172839);
+	background-image: -webkit-linear-gradient(#111, #222);
+	background-image: -o-linear-gradient(#111, #222);
+	background-image: linear-gradient(#111, #222);
 	box-shadow: 0 1px 2px rgba(255,255,255,.35),inset 0 1px 1px rgba(0,0,0,.25);
 }
 
@@ -222,7 +222,7 @@ body #menu button{
 	outline:none;
 	position: relative;
 	background: none;
-	color: #9ab;
+	color: #aaa;
 	margin-left: 20px;
 	padding: 4px 6px 6px 6px;
 	height: 26px;
@@ -308,7 +308,7 @@ body .board{
 	text-align: left;
 	font-family: "Segoe UI", Arial, freesans, sans-serif;
 	font-weight: 400;
-	background: #39c;
+	background: #111;
 	padding:0;
 	perspective:500;
 	-webkit-perspective:500;
@@ -331,13 +331,13 @@ body .board.modall {
 
 body #remind{
 	margin-top: 10px; 
-	background: #069;
+	background: #777;
 	line-height: 24px;
 	border-radius: 5px 5px 0 0;
 	text-align: center;
 	font-family: "Segoe UI", Arial, freesans, sans-serif;
 	font-weight: 450;
-	color: #012;
+	color: #111;
 	box-shadow: 0 1px 2px rgba(0,0,0,.35),inset 0 1px 1px rgba(255,255,255,.25);
 }
 
@@ -345,14 +345,14 @@ body #news{
 	padding: 0;
 	height: 100%;
 	width: 100%;
-	background:#0a1b32;
+	background:#0f0f0f;
 	border-radius:0 0 5px 5px;
 	position: absolute;
 	z-index: 10;
 	-webkit-transition: all .5s ; -moz-transition: all .5s ; -o-transition: all .5s ; transition: all .5s;
 	overflow: hidden;
 	font-size: 1.35rem;
-	color: #789;
+	color: #888;
 }
 
 
@@ -375,30 +375,30 @@ body #news li:hover:after{
 }
 
 body #news a{
-	color: #789;
+	color: #888;
 }
 
 body #news li:hover{
 	font-weight: 500;
 	border-radius: 15px;
     background-color: #122334;
-	background-image: -webkit-linear-gradient(#14253f, #0d1e39);
-	background-image: -o-linear-gradient(#14253f, #0d1e39);
-	background-image: linear-gradient(#14253f, #0d1e39);
+	background-image: -webkit-linear-gradient(#1d1d1d, #0e0e0e);
+	background-image: -o-linear-gradient(#1d1d1d, #0e0e0e);
+	background-image: linear-gradient(#1d1d1d, #0e0e0e);
     box-shadow: 0 1px 2px rgba(0,0,0,.55),inset 0 1px 1px rgba(255,255,255,.15);
 }
 
 body #news li:active{
-	background-image: -webkit-linear-gradient(#071832, #11223c);
-	background-image: -o-linear-gradient(#071832, #11223c);
-	background-image: linear-gradient(#071832, #11223c);
+	background-image: -webkit-linear-gradient(#0e0e0e, #1d1d1d);
+	background-image: -o-linear-gradient(#0e0e0e, #1d1d1d);
+	background-image: linear-gradient(#0e0e0e, #1d1d1d);
 	box-shadow: 0 1px 2px rgba(255,255,255,.35),inset 0 1px 1px rgba(0,0,0,.25);
 }
 
 body #news span{
 	margin-right: 25px;
 	font-family: system,-apple-system,".SFNSText-Regular","Helvetica Neue","Roboto","Segoe UI",sans-serif;
-	color: #456;
+	color: #555;
 	font-weight: 300;
 }
 
