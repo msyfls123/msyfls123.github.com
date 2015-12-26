@@ -2,7 +2,7 @@ $(function() {
 	 $("#cas").html5_3d_animation({
 	        window_width: '1000',
 	        window_height: '400',
-	        window_background: '#070707',
+	        window_background: '#0a1b2c',
 	        star_count: '1000',
 	        star_color: '#bcd',
 	        star_depth: '200'
