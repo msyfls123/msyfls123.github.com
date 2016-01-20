@@ -14,6 +14,14 @@ $(function() {
 	$('#dryer').tooltip({placement:"bottom"})
 	$("body #contact li:eq(0)").hover(function(){$("#qrcode").addClass("q").stop(true,true).slideDown()},function(){$("#qrcode").stop(true,true).slideUp().removeClass("q")});
 	$("body #contact li:eq(1)").hover(function(){$("#qrcode").addClass("w").stop(true,true).slideDown()},function(){$("#qrcode").stop(true,true).slideUp().removeClass("w")});
+
+	$(window).load(function(){
+			$("#news").mCustomScrollbar({
+				theme:"light",
+				scrollButtons:{ enable: false },
+				autoHideScrollbar: true
+			});
+	});
 })
 
 $("body #contact li img").each(function(i){
@@ -36,11 +44,11 @@ window.onload = function() {resize();$("#swift").html("更多精彩")};
 
 
 // d3可视化中的阳光小箭头
-  var light=function(dis1,dis2){svg.append("image")  
-    .attr("x",dis1)  
-    .attr("y",dis2)  
-    .attr("width",10)  
-    .attr("height",10)  
+  var light=function(dis1,dis2){svg.append("image")
+    .attr("x",dis1)
+    .attr("y",dis2)
+    .attr("width",10)
+    .attr("height",10)
     .attr("xlink:href","img/light.svg")
     .attr("opacity",.1)
     .transition()
@@ -92,19 +100,19 @@ var lines=[
 [5,"#f5b090","M302 298 l 0 -108 q 0 -10 10 -10 l 18 0 q 10 0 10 10","157","Flow to bath"],
 ]
 
-	$(document).ready(function(){ 
-	   
+	$(document).ready(function(){
+
 
 	    //d3可视化
 
 		// 添加房屋图片
 		svg=d3.selectAll("#chart").append("svg").attr("width",600).attr("height",400)
-		  svg.append("image")  
-		    .attr("x",0)  
-		    .attr("y",0)  
-		    .attr("width",600)  
-		    .attr("height",400)  
-		    .attr("xlink:href","img/waterflow.svg"); 
+		  svg.append("image")
+		    .attr("x",0)
+		    .attr("y",0)
+		    .attr("width",600)
+		    .attr("height",400)
+		    .attr("xlink:href","img/waterflow.svg");
 
 
 
@@ -207,7 +215,7 @@ var lines=[
 		        		cropThreshold:300,
 		        		marker:{
 		        			radius:2,
-		        			fillColor: '#f00',		        			
+		        			fillColor: '#f00',
 		        		},
 		        		dataLabels: {
 				            enabled: true,
@@ -288,4 +296,3 @@ var lines=[
     	});
 
 	});
-
