@@ -40,7 +40,7 @@ function resize(){
 	$("#contact").css({"margin-top":contactTop+"px","visibility":"visible"});
 }
 window.onresize = function() {resize()};
-window.onload = function() {resize();$("#swift").html("更多精彩")};
+window.onload = function() {resize();$("#swift").html("更多精彩");$("#news").show()};
 
 
 // d3可视化中的阳光小箭头

@@ -353,9 +353,9 @@ body #remind{
 }
 
 body #news{
-	padding: 0;
-	margin: 5% 0;
-	height: 80%;
+	padding:4% 0;
+	margin: 0;
+	height: 100%;
 	width: 100%;
 	border-radius:0 0 5px 5px;
 	position: absolute;
@@ -365,8 +365,14 @@ body #news{
 	overflow-x: hidden;
 	font-size: 1.35rem;
 	color: #888;
+	background: @board;
+	display:none;
 }
 
+body #news ul{
+	padding: 2% 0 0 0;
+	height: 98%;
+}
 
 body #news li{
 	list-style: none;
@@ -466,5 +472,5 @@ body #contact li:nth-of-type(3) img{left: -60px;}
 	transform:scale(.5,.5)
 }
 #text{position:absolute;top: 30px;width: 95%}
-.btn-group{position:absolute;bottom: 20px}
+.btn-group-vertical{position:absolute;bottom: 20px;left:35%;}
 .control{height: 100%}
