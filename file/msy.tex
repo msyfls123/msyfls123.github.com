@@ -7,7 +7,7 @@
 % available at http://www.latex-project.org/lppl/.
 
 
-\documentclass[10pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\documentclass[12pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
 
 % moderncv 主题
 \moderncvstyle{classic}                        % 选项参数是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
@@ -20,7 +20,7 @@
 
 
 % 调整页面出血
-\usepackage[scale=0.92]{geometry}
+\usepackage[scale=0.88]{geometry}
 %\setlength{\hintscolumnwidth}{3cm}           % 如果你希望改变日期栏的宽度
 
 \usepackage{fontspec}
@@ -29,31 +29,31 @@
 \setmainfont{Minion Pro}
 \setsansfont{Myriad Pro}
 \setmonofont{Courier New}
-\setCJKmainfont{微软雅黑}
+\setCJKmainfont{方正准圆简体}
 \setCJKsansfont{KaiTi}
 \setCJKmonofont{SimHei}
 %\setCJKmathfont{}
 
 % 个人信息
 \name{马}{申彦}
-\title{前端/交互/数据可视化}                     % 可选项、如不需要可删除本行
+\title{web前端开发}                     % 可选项、如不需要可删除本行
 \address{中国地质大学(武汉)}                          % 可选项、如不需要可删除本行
-\phone[mobile]{+86~187~7105~8712}              % 可选项、如不需要可删除本行
+\phone[mobile]{187~7105~8712}              % 可选项、如不需要可删除本行
 % \phone[fixed]{+2~(345)~678~901}               % 可选项、如不需要可删除本行
 % \phone[fax]{+3~(456)~789~012}                 % 可选项、如不需要可删除本行
-\email{745784917@qq.com}                    % 可选项、如不需要可删除本行
-\homepage{github.com/msyfls123}                  % 可选项、如不需要可删除本行
-\extrainfo{籍贯：江苏无锡}                 % 可选项、如不需要可删除本行
-\photo[64pt][0.4pt]{msy.jpg}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
+\email{msyfls123@foxmail.com}                    % 可选项、如不需要可删除本行
+\homepage{msyfls123.github.io}                  % 可选项、如不需要可删除本行
+\extrainfo{江苏无锡人}                 % 可选项、如不需要可删除本行
+\photo[64pt][0pt]{msy.jpg}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
 \quote{
 	\small {
-	想了解更多? - 
+	想了解更多? \\
 	\url{http://msyfls123.github.io}
-	\\ 部分作品展示 - 
-	\url{http://www.douban.com/photos/album/155070126/}
 	}
 }                          % 可选项、如不需要可删除本行
 
+\newcommand{\high}{\textcolor[rgb]{0.2,0.5,0.8}}
+\newcommand{\tips}{\textcolor[rgb]{0.35,0.35,0.35}}
 % 显示索引号;仅用于在简历中使用了引言
 %\makeatletter
 %\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
@@ -70,31 +70,66 @@
 \maketitle
 
 \section{教育背景}
-\cventry{2014 - 至今}{硕士}{中国地质大学}{武汉}{\textit{4.13}}{设计学}  % 第3到第6编码可留白
-\cventry{2010 - 2014}{学士}{中国地质大学}{武汉}{\textit{3.62}}{工业设计}
+\cventry{2014 - 至今}{硕士}{中国地质大学}{武汉}{}{设计学}  % 第3到第6编码可留白
+\cventry{2010 - 2014}{学士}{中国地质大学}{武汉}{}{工业设计}
 
-\section{学习经历}
-\cventry{2015.7-10}{设计实习生}{佛山尚致设计有限公司}{佛山}{\url{www.bob-id.com.cn}}{
-参与多项平面设计及交互设计工作,利用网络推动公司形象宣传，完成了公司首个众筹产品的发布
+\section{实践经历}
+\cventry{2016.3-7}{前端开发（实习）}{\high{苏州蜗牛数字科技股份有限公司}}{}{}{
+\begin{itemize}
+	\item 编写具有适配性、响应用户交互操作的游戏活动专题页面：
+	\tips{\begin{description}%
+		\item[类型：]{预约+报名+抽奖+签到+手机投票+微信公众号回复关键词等}
+		\item[开发：]{Gulp/webpack打包，Sass编写样式，小图片sprite化，Vue/React编写多交互页面}
+		\item[问题：]{跨域Ajax，IE兼容及平稳退化，响应式，用户状态数据的维护等}
+	\end{description}}
+	\item 蜗牛直播平台（\url{v.woniu.com}）的前端开发，解决问题：
+	\tips{\begin{itemize}%
+		\item 根据不同类型（flash/iframe/video）动态渲染直播源至页面
+		\item 视频列表页面的js分页及按页面宽度缩放列表项以充满屏幕宽度
+		\item 针对不同屏幕及不同内容长度对侧边栏、主体内容和底栏做兼容性适配
+	\end{itemize}}
+	\item 某海外视频站点的前端开发，解决问题：
+	\tips{\begin{itemize}
+		\item 首页及列表页的无限滚动加载
+		\item Vue做用户评论点赞功能的组件化开发
+		\item 未购买用户视频播放时的购买弹窗功能
+	\end{itemize}}
+\end{itemize}
 }
-\cventry{2014.7-8}{前端开发}{武汉七彩马科技有限公司}{武汉}{\url{7caima.com/static/service}}{
-\begin{itemize}%
-\item 参与静态展示页面的设计与制作
-\item 独立完成悬浮导航，树状流动，页面锚点滚动及旋转标语展示等JS特效
+\cventry{2014.7-8}{前端开发}{\high{武汉七彩马科技有限公司}}{}{}{
+\begin{itemize}
+	\item 静态展示页面的设计与制作
+	\item jquery完成悬浮导航，树状流动，页面锚点滚动及旋转标语展示等页面效果
 \end{itemize}
 }
 % \cventry{2013.8}{生产部实习生}{无锡协友机械制造有限公司}{无锡}{}{
 % 学习机械加工的流程及工艺特点，合作完成某设备塑胶卡件的加工
 % }
-\cventry{2013.7}{交流学生}{韩国建国大学夏令营}{韩国忠州}{}{
-赴韩国参观学习两周，了解当地风土人情及先进设计技术
+\cventry{2013.7}{交流学生}{\high{韩国建国大学夏令营}}{}{}{
+赴韩国建国大学参观学习，参与部分合作交流项目
 }
-\cventry{2013.5-6}{获奖}{北京设计周}{北京}{}{
+\cventry{2013.5-6}{获奖}{\high{北京设计周}}{}{}{
 获得2013年诺基亚·绿色设计大赛银奖，作品“环保垃圾桶”在设计周上展出
 }
 
+\section{个人技能}
+\cvitem{前端开发}{\small{熟练开发符合W3C、兼容性及响应式要求的页面
+		\begin{description}
+			\item[\high{用框架}]{熟练使用jQuery/Vue/React开发应用，了解Angular，正在学习Redux等状态管理工具}
+			\item[\high{工程化}]{会应用Gulp/webpack等打包工具管理项目中依赖的js/scss/img等资源，实现单页面应用}
+			\item[\high{黑魔法}]{全景播放器Krpano，会它的一点点xml语法，能实现简单的交互}
+		\end{description}}}
+\cvitem{基础技能}{用git/svn进行版本管理，npm做node包管理，linux下简单操作，vim会保存退出...}
+\cvitem{后端开发}{\small{会Python/NodeJS，熟悉Django框架，能配置Nginx/MySQL}}
+\cvitem{数据可视化}{\small{熟悉D3.js/HightCharts等框架，了解H5的Canvas/SVG语法，会用\LaTeX{}进行排版}}
+\cvitem{平面设计}{\small{熟练掌握AI/Ps/Id等常用平面软件操作，排排小册子没问题的啦}}
+\cvitem{交互设计}{\small{能使用Axure/AE/PR等软件完成APP网页等原型及交互，会制作简单小视频}}
+\cvitem{三维设计}{\small{掌握Rhino/3dMax/SketchUp/CATIA等三维软件，有过虚拟仪器开发经验}}
+
 \section{项目经历}
-\cvitemwithcomment{2015}{中国地质大学(武汉)机电学院网站}{网页交互及前端开发}
+\cvitemwithcomment{2016}{
+	深圳市中科德睿智能科技有限公司网站\qquad\url{derui-tech.com}}{ALL}
+\cvitemwithcomment{2015}{中国地质大学(武汉)\qquad\url{jidian.cug.edu.cn}}{交互及前端开发}
 \cvitemwithcomment{2014}{VDP.ICIDO软件在工业设计教学中的应用}{虚拟仿真软件应用}
 \cvitemwithcomment{2013}{某免费停车概念APP原型}{原型设计制作}
 \cvitemwithcomment{2013-2014}{中地大资源学院油藏物理虚拟实验室}{三维造型及贴图设计}
@@ -108,13 +143,6 @@
 \cvitemwithcomment{学校}{奖学金}{2012校长奖学金/2014杰美特奖学金}
 \cvitemwithcomment{学校}{荣誉称号}{2012校优秀学生干部/2013校优秀共青团员}
 
-\section{个人技能}
-\cvitem{前端开发}{\small{熟练应用HTML/CSS/Javascript编写页面，掌握jQuery/AngularJS等前端框架}}
-\cvitem{后端开发}{\small{熟悉Django/Python框架，能够部署Nginx/MySQL服务器}}
-\cvitem{数据可视化}{\small{熟悉D3.js/HightCharts/Processing等语言框架，了解H5的Canvas/SVG语法，会用\LaTeX{}进行排版}}
-\cvitem{平面设计}{\small{熟练掌握AI/Ps/Id等常用平面软件操作，能独立进行VI画册等设计}}
-\cvitem{交互设计}{\small{能使用Axure/AE/PR等软件完成APP网页等交互效果，会制作简单小视频}}
-\cvitem{三维设计}{\small{掌握Rhino/3dMax/SketchUp/CATIA等三维软件，有过虚拟仪器开发经验}}
 
 \renewcommand{\listitemsymbol}{-}             % 改变列表符号
 
