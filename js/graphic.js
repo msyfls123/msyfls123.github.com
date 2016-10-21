@@ -16,11 +16,25 @@ $(function() {
 	$("body #contact li:eq(1)").hover(function(){$("#qrcode").addClass("w").stop(true,true).slideDown()},function(){$("#qrcode").stop(true,true).slideUp().removeClass("w")});
 
 	$(window).load(function(){
-			$("#news").mCustomScrollbar({
-				theme:"light",
-				scrollButtons:{ enable: false },
-				autoHideScrollbar: true
-			});
+		var list = ''
+		$.getJSON('/file/data.json')
+		  .then(function(data){
+				for (var i = 0; i < data.data.length; i++) {
+					var d = data.data[i]
+					var el = '<a href="'　+
+					 	d.url + '"><li><span>' +
+					 	d.date + '</span>' +
+					 	d.name + '</li></a>'
+					list = list + el
+				}
+				$('#news').html(list)
+			}).then(function(){
+				$("#news").mCustomScrollbar({
+					theme:"light",
+					scrollButtons:{ enable: false },
+					autoHideScrollbar: true
+				});
+			})
 	});
 })
 
